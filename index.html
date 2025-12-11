@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern DSA Tutorial - Interactive Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-code"></i> DSA Topics</h2>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="topic-section">
+                <h3><i class="fas fa-layer-group"></i> Data Structures</h3>
+                <ul class="topic-list">
+                    <li data-topic="arrays"><i class="fas fa-th"></i> Arrays</li>
+                    <li data-topic="linked-lists"><i class="fas fa-link"></i> Linked Lists</li>
+                    <li data-topic="stacks"><i class="fas fa-layer-group"></i> Stacks</li>
+                    <li data-topic="queues"><i class="fas fa-stream"></i> Queues</li>
+                    <li data-topic="trees"><i class="fas fa-sitemap"></i> Trees</li>
+                    <li data-topic="graphs"><i class="fas fa-project-diagram"></i> Graphs</li>
+                    <li data-topic="hash-tables"><i class="fas fa-hashtag"></i> Hash Tables</li>
+                    <li data-topic="heaps"><i class="fas fa-mountain"></i> Heaps</li>
+                </ul>
+            </div>
+            <div class="topic-section">
+                <h3><i class="fas fa-cogs"></i> Algorithms</h3>
+                <ul class="topic-list">
+                    <li data-topic="sorting"><i class="fas fa-sort"></i> Sorting</li>
+                    <li data-topic="searching"><i class="fas fa-search"></i> Searching</li>
+                    <li data-topic="recursion"><i class="fas fa-sync"></i> Recursion</li>
+                    <li data-topic="dynamic-programming"><i class="fas fa-bezier-curve"></i> Dynamic Programming</li>
+                    <li data-topic="greedy"><i class="fas fa-piggy-bank"></i> Greedy</li>
+                    <li data-topic="backtracking"><i class="fas fa-undo"></i> Backtracking</li>
+                    <li data-topic="divide-conquer"><i class="fas fa-object-ungroup"></i> Divide & Conquer</li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Container -->
+    <div class="main-wrapper">
+        <!-- Top Header -->
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="header-title">
+                <h1><i class="fas fa-graduation-cap"></i> Modern DSA Tutorial</h1>
+                <p>Master Data Structures & Algorithms with AI</p>
+            </div>
+            <div class="header-actions">
+                <button class="action-btn" id="clearChat" title="Clear Chat">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+                <button class="action-btn" id="themeToggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-content">
+                    <div class="welcome-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h2>Welcome to DSA Tutorial!</h2>
+                    <p>Your AI-powered companion for mastering Data Structures & Algorithms</p>
+                    
+                    <div class="quick-topics">
+                        <h3>Quick Start Topics:</h3>
+                        <div class="topic-chips">
+                            <button class="chip" data-prompt="Explain arrays with examples">
+                                <i class="fas fa-th"></i> Arrays
+                            </button>
+                            <button class="chip" data-prompt="How do linked lists work?">
+                                <i class="fas fa-link"></i> Linked Lists
+                            </button>
+                            <button class="chip" data-prompt="Explain binary search algorithm">
+                                <i class="fas fa-search"></i> Binary Search
+                            </button>
+                            <button class="chip" data-prompt="What is dynamic programming?">
+                                <i class="fas fa-bezier-curve"></i> Dynamic Programming
+                            </button>
+                            <button class="chip" data-prompt="Explain sorting algorithms">
+                                <i class="fas fa-sort"></i> Sorting
+                            </button>
+                            <button class="chip" data-prompt="How do trees work in DSA?">
+                                <i class="fas fa-sitemap"></i> Trees
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <i class="fas fa-brain"></i>
+                            <span>AI-Powered Explanations</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-code"></i>
+                            <span>Code Examples</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Time Complexity Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will appear here -->
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <button class="attach-btn" id="attachBtn" title="Quick Topics">
+                        <i class="fas fa-lightbulb"></i>
+                    </button>
+                    <textarea 
+                        id="userInput" 
+                        placeholder="Ask anything about DSA... (e.g., 'Explain quicksort' or 'How do binary trees work?')"
+                        rows="1"
+                        autocomplete="off"
+                    ></textarea>
+                    <button id="sendBtn" title="Send Message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-hint">
+                    <i class="fas fa-info-circle"></i>
+                    Press <kbd>Enter</kbd> to send, <kbd>Shift + Enter</kbd> for new line
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
