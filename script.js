@@ -15,7 +15,7 @@ const attachBtn = document.getElementById('attachBtn');
 
 // Initialize Gemini AI
 const ai = new GoogleGenAI({
-    apiKey: "AIzaSyATrK6gewtHtRSk-Q5ZTySWIJjsZK9YPSI" // Replace with your actual API key
+    apiKey: import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyBpTo5Nz3wtJc5msxRm-qNUA1VtPLs125c" // Load from .env file
 });
 
 // Enhanced system prompt for DSA tutorial (Rohit Negi - Coder Army Style)
